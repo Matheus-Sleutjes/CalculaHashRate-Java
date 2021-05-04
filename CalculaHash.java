@@ -42,9 +42,9 @@ public class CalculaHash {
 				//-----------------------------------------------------------------------------------------
 				
 				double custoEnergiaDiaDouble = ((watt*24)/1000)*0.9;
-				float custoEnergiaDia = (float)custoEnergiaDiaDouble;
+				float custoEnergiaDia = (float)custoEnergiaDiaDouble;  // transforma a variavel Double  em Float
 				double custoEnergiaDouble = ((watt*720)/1000)*0.9;
-				float custoEnergia = (float)custoEnergiaDouble;
+				float custoEnergia = (float)custoEnergiaDouble;  // transforma a variavel Double em Float
 
 				float brutoEth = (mhs*mineEth)/100;		
 				float brutoReal = brutoEth * ethValor;
