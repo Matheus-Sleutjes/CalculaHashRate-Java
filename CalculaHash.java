@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class CalculaHash {
 	public static void main(String arg[]){
-		bool sair = false ;
+		boolean sair = false ;
 		while(sair == false ){
 		
 		Scanner ler = new Scanner(System.in);
