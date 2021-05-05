@@ -1,6 +1,9 @@
 import java.util.Scanner;
 public class CalculaHash {
 	public static void main(String arg[]){
+		bool sair = false ;
+		while(sair == false ){
+		
 		Scanner ler = new Scanner(System.in);
 		System.out.println("==================================================");
 		System.out.println("DIGITE A FUNCAO DESEJADA");
@@ -41,14 +44,14 @@ public class CalculaHash {
 
 				//-----------------------------------------------------------------------------------------
 				
-				double custoEnergiaDiaDouble = ((watt*24)/1000)*0.9;
+				double custoEnergiaDiaDouble = ((watt*24)/1000)*0.9;   //calcula o valor em Reais por dia de energia
 				float custoEnergiaDia = (float)custoEnergiaDiaDouble;  // transforma a variavel Double  em Float
-				double custoEnergiaDouble = ((watt*720)/1000)*0.9;
+				double custoEnergiaDouble = ((watt*720)/1000)*0.9;  //calcula o valor em Reais por mes de energia
 				float custoEnergia = (float)custoEnergiaDouble;  // transforma a variavel Double em Float
 
-				float brutoEth = (mhs*mineEth)/100;		
-				float brutoReal = brutoEth * ethValor;
-				float brutoEthMes = brutoEth * 30;
+				float brutoEth = (mhs*mineEth)/100;  // calcula o valor bruto em ETH		
+				float brutoReal = brutoEth * ethValor;  //calcula o valor bruto em Reais
+				float brutoEthMes = brutoEth * 30; 
 				float brutoRealMes = brutoReal * 30;
 				System.out.println("==================================================");
 				System.out.println("O VALOR BRUTO DO LUCRO E DE:");
@@ -64,10 +67,10 @@ public class CalculaHash {
 				System.out.println("!! OBS: OS VALORES ACIMA SAO UMA ESTIMATIVA !!");
 				System.out.println("==================================================");
 				
-				float liquidoReal = brutoReal-custoEnergiaDia;
-				float liquidoRealMes = brutoRealMes-custoEnergia;
-				float liquidoEth = brutoEth-(custoEnergiaDia/ethValor);
-				float liquidoEthMes = brutoEthMes-(custoEnergia/ethValor);
+				float liquidoReal = brutoReal-custoEnergiaDia;  //calcula o lucro por dia em Reais
+				float liquidoRealMes = brutoRealMes-custoEnergia;  //calcula o lucro por mes em Reais
+				float liquidoEth = brutoEth-(custoEnergiaDia/ethValor);  //calcula o lucro por dia em Eth
+				float liquidoEthMes = brutoEthMes-(custoEnergia/ethValor);  //calcula o lucro por mes em Eth
 
 				System.out.println("==================================================");
 				System.out.println("O VALOR LIQUIDO DO LUCRO E:");
@@ -79,16 +82,31 @@ public class CalculaHash {
 				System.out.println("R$:"+ liquidoReal +" POR DIA");
 				System.out.println("--------------------------------------------------");
 				System.out.println("R$:"+ liquidoRealMes +" POR MES");
+				System.out.println("--------------------------------------------------");
+				System.out.println("!! OBS: OS VALORES ACIMA SAO UMA ESTIMATIVA !!");
 				System.out.println("==================================================");
+				
+				System.out.println("==================================================");    //começo da função sair 
+				System.out.println("DESEJA FAZER OUTRA OPERACAO ?");
+				System.out.println("DIGITE A OPCAO ABAIXO");
+				System.out.println("SIM/NAO");
+				System.out.println("==================================================");
+				string resp = ler.next();
+				if(resp == "nao"){
+					sair = true;
+				}  //fim da função sair 
 				
 			break;
 			case 2:
 				System.out.println("4 - {EM CONSTRUCAO}");
+				sair = false;
 			break;
 			case 3:
 				System.out.println("4 - {EM CONSTRUCAO}");
+				sair = false;
 			break;
-		}
-	}
-}
+			} // fim switch
+		} // fim while sair	
+	} //fim main
+} //fim CalculaHash
 
