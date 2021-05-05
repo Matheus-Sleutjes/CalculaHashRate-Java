@@ -89,10 +89,10 @@ public class CalculaHash {
 				System.out.println("==================================================");    //começo da função sair 
 				System.out.println("DESEJA FAZER OUTRA OPERACAO ?");
 				System.out.println("DIGITE A OPCAO ABAIXO");
-				System.out.println("SIM/NAO");
+				System.out.println("1 PARA SIM / 2 PARA NAO");
 				System.out.println("==================================================");
-				string resp = ler.next();
-				if(resp == "nao"){
+				int resp = ler.nextInt();
+				if(resp == 2){
 					sair = true;
 				}  //fim da função sair 
 				
