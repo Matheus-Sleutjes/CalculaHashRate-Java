@@ -17,6 +17,10 @@ public class CalculaHash {
 			
 		// -------------------------------------------------------------------------------------
 		
+		float mhs,watt,ethValor,mineEth,brutoEth,brutoReal,brutoEthMes,brutoRealMes,liquidoReal,liquidoRealMes,liquidoEth,liquidoEthMes;
+		double custoEnergiaDouble,custoEnergiaDiaDouble;
+		int resp;	
+			
 		switch (OP) {
 			case 1:
 					
@@ -27,12 +31,12 @@ public class CalculaHash {
 				System.out.println("==================================================");
 				System.out.println("       DIGITE SEU GASTO ENERGETICO EM WATTS");
 				System.out.println("==================================================");
-				float watt = ler.nextFloat();
+				watt = ler.nextFloat();
 					
 				System.out.println("==================================================");
 				System.out.println("        DIGITE O QUAL O VALOR DO ETHEREUM");
 				System.out.println("==================================================");
-				float ethValor = ler.nextFloat();
+				ethValor = ler.nextFloat();
 		
 				System.out.println("==================================================");
 				System.out.println(" DIGITE A QUANTIDADE DE ETH POR 100 MH/s MINERADO");
@@ -40,19 +44,20 @@ public class CalculaHash {
 				System.out.println("              https://hiveon.net/");
 				System.out.println("  PEGAR A '24-hour average earnings' AGRADECIDO");
 				System.out.println("==================================================");
-				float mineEth = ler.nextFloat();
+				mineEth = ler.nextFloat();
 
 				//-----------------------------------------------------------------------------------------
 				
-				double custoEnergiaDiaDouble = ((watt*24)/1000)*0.9;   //calcula o valor em Reais por dia de energia
-				float custoEnergiaDia = (float)custoEnergiaDiaDouble;  // transforma a variavel Double  em Float
-				double custoEnergiaDouble = ((watt*720)/1000)*0.9;  //calcula o valor em Reais por mes de energia
-				float custoEnergia = (float)custoEnergiaDouble;  // transforma a variavel Double em Float
+				custoEnergiaDiaDouble = ((watt*24)/1000)*0.9;   //calcula o valor em Reais por dia de energia
+				custoEnergiaDia = (float)custoEnergiaDiaDouble;  // transforma a variavel Double  em Float
+				custoEnergiaDouble = ((watt*720)/1000)*0.9;  //calcula o valor em Reais por mes de energia
+				custoEnergia = (float)custoEnergiaDouble;  // transforma a variavel Double em Float
 
-				float brutoEth = (mhs*mineEth)/100;  // calcula o valor bruto em ETH		
-				float brutoReal = brutoEth * ethValor;  //calcula o valor bruto em Reais
-				float brutoEthMes = brutoEth * 30; 
-				float brutoRealMes = brutoReal * 30;
+				brutoEth = (mhs*mineEth)/100;  // calcula o valor bruto em ETH		
+				brutoReal = brutoEth * ethValor;  //calcula o valor bruto em Reais
+				brutoEthMes = brutoEth * 30; 
+				
+				brutoRealMes = brutoReal * 30;
 				System.out.println("==================================================");
 				System.out.println("O VALOR BRUTO DO LUCRO E DE:");
 				System.out.println("--------------------------------------------------");
@@ -67,10 +72,10 @@ public class CalculaHash {
 				System.out.println("!! OBS: OS VALORES ACIMA SAO UMA ESTIMATIVA !!");
 				System.out.println("==================================================");
 				
-				float liquidoReal = brutoReal-custoEnergiaDia;  //calcula o lucro por dia em Reais
-				float liquidoRealMes = brutoRealMes-custoEnergia;  //calcula o lucro por mes em Reais
-				float liquidoEth = brutoEth-(custoEnergiaDia/ethValor);  //calcula o lucro por dia em Eth
-				float liquidoEthMes = brutoEthMes-(custoEnergia/ethValor);  //calcula o lucro por mes em Eth
+				liquidoReal = brutoReal-custoEnergiaDia;  //calcula o lucro por dia em Reais
+				liquidoRealMes = brutoRealMes-custoEnergia;  //calcula o lucro por mes em Reais
+				liquidoEth = brutoEth-(custoEnergiaDia/ethValor);  //calcula o lucro por dia em Eth
+				liquidoEthMes = brutoEthMes-(custoEnergia/ethValor);  //calcula o lucro por mes em Eth
 
 				System.out.println("==================================================");
 				System.out.println("O VALOR LIQUIDO DO LUCRO E:");
@@ -91,7 +96,7 @@ public class CalculaHash {
 				System.out.println("DIGITE A OPCAO ABAIXO");
 				System.out.println("1 PARA SIM / 2 PARA NAO");
 				System.out.println("==================================================");
-				int resp = ler.nextInt();
+				resp = ler.nextInt();
 				if(resp == 2){
 					sair = true;
 				}  //fim da função sair 
@@ -101,17 +106,17 @@ public class CalculaHash {
 				System.out.println("==================================================");
 				System.out.println("       DIGITE SEU GASTO ENERGETICO EM WATTS");
 				System.out.println("==================================================");
-				float watt = ler.nextFloat();
+				watt = ler.nextFloat();
 				
 				System.out.println("==================================================");
 				System.out.println("       DIGITE O VALOR DO KW/H DA SUA REGIAO");
 				System.out.println("==================================================");
-				float kw = ler.nextFloat();
+				kw = ler.nextFloat();
 				
-				double custoEnergiaDiaDouble = ((watt*24)/1000)*kw;   //calcula o valor em Reais por dia de energia
-				float custoEnergiaDia = (float)custoEnergiaDiaDouble;  // transforma a variavel Double  em Float
-				double custoEnergiaDouble = ((watt*720)/1000)*kw;  //calcula o valor em Reais por mes de energia
-				float custoEnergia = (float)custoEnergiaDouble;  // transforma a variavel Double em Float
+				custoEnergiaDiaDouble = ((watt*24)/1000)*kw;   //calcula o valor em Reais por dia de energia
+				custoEnergiaDia = (float)custoEnergiaDiaDouble;  // transforma a variavel Double  em Float
+				custoEnergiaDouble = ((watt*720)/1000)*kw;  //calcula o valor em Reais por mes de energia
+				custoEnergia = (float)custoEnergiaDouble;  // transforma a variavel Double em Float
 				
 				System.out.println("==================================================");
 				System.out.println("O SEU GASTO DE ENERGIA ");
@@ -128,7 +133,7 @@ public class CalculaHash {
 				System.out.println("DIGITE A OPCAO ABAIXO");
 				System.out.println("1 PARA SIM / 2 PARA NAO");
 				System.out.println("==================================================");
-				int resp = ler.nextInt();
+				resp = ler.nextInt();
 				if(resp == 2){
 					sair = true;
 				}  //fim da função sair
