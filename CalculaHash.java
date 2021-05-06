@@ -101,17 +101,17 @@ public class CalculaHash {
 				System.out.println("==================================================");
 				System.out.println("       DIGITE SEU GASTO ENERGETICO EM WATTS");
 				System.out.println("==================================================");
-				float watt = ler.nextFloat();
+				watt = ler.nextFloat();
 				
 				System.out.println("==================================================");
 				System.out.println("       DIGITE O VALOR DO KW/H DA SUA REGIAO");
 				System.out.println("==================================================");
-				float kw = ler.nextFloat();
+				 kw = ler.nextFloat();
 				
-				double custoEnergiaDiaDouble = ((watt*24)/1000)*kw;   //calcula o valor em Reais por dia de energia
-				float custoEnergiaDia = (float)custoEnergiaDiaDouble;  // transforma a variavel Double  em Float
-				double custoEnergiaDouble = ((watt*720)/1000)*kw;  //calcula o valor em Reais por mes de energia
-				float custoEnergia = (float)custoEnergiaDouble;  // transforma a variavel Double em Float
+				custoEnergiaDiaDouble = ((watt*24)/1000)*kw;   //calcula o valor em Reais por dia de energia
+				custoEnergiaDia = (float)custoEnergiaDiaDouble;  // transforma a variavel Double  em Float
+				custoEnergiaDouble = ((watt*720)/1000)*kw;  //calcula o valor em Reais por mes de energia
+				custoEnergia = (float)custoEnergiaDouble;  // transforma a variavel Double em Float
 				
 				System.out.println("==================================================");
 				System.out.println("O SEU GASTO DE ENERGIA ");
@@ -128,7 +128,7 @@ public class CalculaHash {
 				System.out.println("DIGITE A OPCAO ABAIXO");
 				System.out.println("1 PARA SIM / 2 PARA NAO");
 				System.out.println("==================================================");
-				int resp = ler.nextInt();
+				resp = ler.nextInt();
 				if(resp == 2){
 					sair = true;
 				}  //fim da função sair
